@@ -1,0 +1,1152 @@
+        -:    0:Source:TestVoting.cpp
+        -:    0:Graph:TestVoting-TestVoting.gcno
+        -:    0:Data:TestVoting-TestVoting.gcda
+        -:    0:Runs:4
+        -:    1:#include "gtest/gtest.h"
+        -:    2:#include <vector>
+        -:    3:#include <string>
+        -:    4:
+        -:    5:#include "Voting.hpp"
+        -:    6:
+        -:    7:using namespace std;
+        -:    8:
+        -:    9:
+        -:   10://make list of candidates and ballots into textfile
+        -:   11://
+        -:   12:
+        -:   13://copy code from run voting in here and give a certain file
+        -:   14:
+        -:   15://4 or 5 tests per method
+        -:   16:
+        -:   17:
+        -:   18:Ballot ballot1 = Ballot("1 2 3 4");
+        -:   19:Ballot ballot2 = Ballot("2 1 3 4");
+        -:   20:Ballot ballot3 = Ballot("3 2 4 1");
+        -:   21:Ballot ballot4 = Ballot("4 3 1 2");
+        -:   22:
+        -:   23:vector<Candidate> all_candidates;
+        -:   24:vector<Candidate> winners;
+        -:   25:
+        -:   26:Candidate cand1("A");
+        -:   27:
+        -:   28:
+        -:   29:Candidate cand2 = Candidate("B");
+        -:   30://cand2.candidate_ballots.push_back(&ballot2);
+        -:   31:
+        -:   32:Candidate cand3 = Candidate("C");
+        -:   33://cand3.candidate_ballots.push_back(&ballot3);
+        -:   34:
+        -:   35:Candidate cand4 = Candidate("D");
+        -:   36://cand4.candidate_ballots.push_back(&ballot4);
+        -:   37:
+        -:   38://find_max_cand() tests
+        -:   39://testing out only one candidate in list
+       16:   40:TEST(VotingFixture, find_max_cand_0) {
+        -:   41:
+        4:   42:    cand1.candidate_ballots.push_back(&ballot1);
+        4:   43:    all_candidates.push_back(cand1);
+        -:   44:
+        -:   45:
+       4*:   46:    ASSERT_EQ(find_max_cand(&all_candidates, 1, &winners), true);
+        -:   47:
+        4:   48:    cand1.candidate_ballots.clear();
+        4:   49:    all_candidates.clear();
+        -:   50:}
+------------------
+_ZN34VotingFixture_find_max_cand_0_TestC2Ev:
+        4:   40:TEST(VotingFixture, find_max_cand_0) {
+------------------
+_ZN34VotingFixture_find_max_cand_0_TestD0Ev:
+        4:   40:TEST(VotingFixture, find_max_cand_0) {
+------------------
+_ZN34VotingFixture_find_max_cand_0_TestD2Ev:
+        4:   40:TEST(VotingFixture, find_max_cand_0) {
+------------------
+_ZN34VotingFixture_find_max_cand_0_Test8TestBodyEv:
+        4:   40:TEST(VotingFixture, find_max_cand_0) {
+        -:   41:
+        4:   42:    cand1.candidate_ballots.push_back(&ballot1);
+        4:   43:    all_candidates.push_back(cand1);
+        -:   44:
+        -:   45:
+       4*:   46:    ASSERT_EQ(find_max_cand(&all_candidates, 1, &winners), true);
+        -:   47:
+        4:   48:    cand1.candidate_ballots.clear();
+        4:   49:    all_candidates.clear();
+        -:   50:}
+------------------
+        -:   51:
+        -:   52://tied candidates, no max
+       16:   53:TEST(VotingFixture, find_max_cand_1) {
+        -:   54:
+        -:   55:
+        4:   56:    cand1.candidate_ballots.push_back(&ballot1);
+        4:   57:    cand2.candidate_ballots.push_back(&ballot2);
+        4:   58:    all_candidates.push_back(cand1);
+        4:   59:    all_candidates.push_back(cand2);
+        -:   60:
+       4*:   61:    ASSERT_EQ(find_max_cand(&all_candidates, 2, &winners), false);
+        -:   62:
+        4:   63:    cand1.candidate_ballots.clear();
+        4:   64:    cand2.candidate_ballots.clear();
+        4:   65:    all_candidates.clear();
+        -:   66:}
+------------------
+_ZN34VotingFixture_find_max_cand_1_TestC2Ev:
+        4:   53:TEST(VotingFixture, find_max_cand_1) {
+------------------
+_ZN34VotingFixture_find_max_cand_1_TestD0Ev:
+        4:   53:TEST(VotingFixture, find_max_cand_1) {
+------------------
+_ZN34VotingFixture_find_max_cand_1_TestD2Ev:
+        4:   53:TEST(VotingFixture, find_max_cand_1) {
+------------------
+_ZN34VotingFixture_find_max_cand_1_Test8TestBodyEv:
+        4:   53:TEST(VotingFixture, find_max_cand_1) {
+        -:   54:
+        -:   55:
+        4:   56:    cand1.candidate_ballots.push_back(&ballot1);
+        4:   57:    cand2.candidate_ballots.push_back(&ballot2);
+        4:   58:    all_candidates.push_back(cand1);
+        4:   59:    all_candidates.push_back(cand2);
+        -:   60:
+       4*:   61:    ASSERT_EQ(find_max_cand(&all_candidates, 2, &winners), false);
+        -:   62:
+        4:   63:    cand1.candidate_ballots.clear();
+        4:   64:    cand2.candidate_ballots.clear();
+        4:   65:    all_candidates.clear();
+        -:   66:}
+------------------
+        -:   67:
+        -:   68://2 candidates where B has maxVotes
+       16:   69:TEST(VotingFixture, find_max_cand_2) {
+        -:   70:
+        -:   71:
+        4:   72:    cand1.candidate_ballots.push_back(&ballot1);
+        4:   73:    cand2.candidate_ballots.push_back(&ballot2);
+        4:   74:    cand2.candidate_ballots.push_back(&ballot2);
+        4:   75:    all_candidates.push_back(cand1);
+        4:   76:    all_candidates.push_back(cand2);
+        -:   77:
+       4*:   78:    ASSERT_EQ(find_max_cand(&all_candidates, 2, &winners), true);
+        -:   79:
+        4:   80:    cand1.candidate_ballots.clear();
+        4:   81:    cand2.candidate_ballots.clear();
+        4:   82:    all_candidates.clear();
+        -:   83:}
+------------------
+_ZN34VotingFixture_find_max_cand_2_TestC2Ev:
+        4:   69:TEST(VotingFixture, find_max_cand_2) {
+------------------
+_ZN34VotingFixture_find_max_cand_2_TestD0Ev:
+        4:   69:TEST(VotingFixture, find_max_cand_2) {
+------------------
+_ZN34VotingFixture_find_max_cand_2_TestD2Ev:
+        4:   69:TEST(VotingFixture, find_max_cand_2) {
+------------------
+_ZN34VotingFixture_find_max_cand_2_Test8TestBodyEv:
+        4:   69:TEST(VotingFixture, find_max_cand_2) {
+        -:   70:
+        -:   71:
+        4:   72:    cand1.candidate_ballots.push_back(&ballot1);
+        4:   73:    cand2.candidate_ballots.push_back(&ballot2);
+        4:   74:    cand2.candidate_ballots.push_back(&ballot2);
+        4:   75:    all_candidates.push_back(cand1);
+        4:   76:    all_candidates.push_back(cand2);
+        -:   77:
+       4*:   78:    ASSERT_EQ(find_max_cand(&all_candidates, 2, &winners), true);
+        -:   79:
+        4:   80:    cand1.candidate_ballots.clear();
+        4:   81:    cand2.candidate_ballots.clear();
+        4:   82:    all_candidates.clear();
+        -:   83:}
+------------------
+        -:   84:
+        -:   85://testing all candidates tied
+       16:   86:TEST(VotingFixture, find_max_cand_3) {
+        -:   87:
+        4:   88:    cand1.candidate_ballots.push_back(&ballot1);
+        4:   89:    cand1.candidate_ballots.push_back(&ballot1);
+        4:   90:    cand2.candidate_ballots.push_back(&ballot2);
+        4:   91:    cand2.candidate_ballots.push_back(&ballot2);
+        4:   92:    cand3.candidate_ballots.push_back(&ballot3);
+        4:   93:    cand3.candidate_ballots.push_back(&ballot3);
+        4:   94:    cand4.candidate_ballots.push_back(&ballot4);
+        4:   95:    cand4.candidate_ballots.push_back(&ballot4);
+        -:   96:
+        4:   97:    all_candidates.push_back(cand1);
+        4:   98:    all_candidates.push_back(cand2);
+        4:   99:    all_candidates.push_back(cand3);
+        4:  100:    all_candidates.push_back(cand4);
+        -:  101:
+        -:  102:    //testing out only one candidate in list
+       4*:  103:    ASSERT_EQ(find_max_cand(&all_candidates, 8, &winners), false);
+        -:  104:
+        4:  105:    cand1.candidate_ballots.clear();
+        4:  106:    cand2.candidate_ballots.clear();
+        4:  107:    cand3.candidate_ballots.clear();
+        4:  108:    cand4.candidate_ballots.clear();
+        4:  109:    all_candidates.clear();
+        -:  110:}
+------------------
+_ZN34VotingFixture_find_max_cand_3_TestC2Ev:
+        4:   86:TEST(VotingFixture, find_max_cand_3) {
+------------------
+_ZN34VotingFixture_find_max_cand_3_TestD0Ev:
+        4:   86:TEST(VotingFixture, find_max_cand_3) {
+------------------
+_ZN34VotingFixture_find_max_cand_3_TestD2Ev:
+        4:   86:TEST(VotingFixture, find_max_cand_3) {
+------------------
+_ZN34VotingFixture_find_max_cand_3_Test8TestBodyEv:
+        4:   86:TEST(VotingFixture, find_max_cand_3) {
+        -:   87:
+        4:   88:    cand1.candidate_ballots.push_back(&ballot1);
+        4:   89:    cand1.candidate_ballots.push_back(&ballot1);
+        4:   90:    cand2.candidate_ballots.push_back(&ballot2);
+        4:   91:    cand2.candidate_ballots.push_back(&ballot2);
+        4:   92:    cand3.candidate_ballots.push_back(&ballot3);
+        4:   93:    cand3.candidate_ballots.push_back(&ballot3);
+        4:   94:    cand4.candidate_ballots.push_back(&ballot4);
+        4:   95:    cand4.candidate_ballots.push_back(&ballot4);
+        -:   96:
+        4:   97:    all_candidates.push_back(cand1);
+        4:   98:    all_candidates.push_back(cand2);
+        4:   99:    all_candidates.push_back(cand3);
+        4:  100:    all_candidates.push_back(cand4);
+        -:  101:
+        -:  102:    //testing out only one candidate in list
+       4*:  103:    ASSERT_EQ(find_max_cand(&all_candidates, 8, &winners), false);
+        -:  104:
+        4:  105:    cand1.candidate_ballots.clear();
+        4:  106:    cand2.candidate_ballots.clear();
+        4:  107:    cand3.candidate_ballots.clear();
+        4:  108:    cand4.candidate_ballots.clear();
+        4:  109:    all_candidates.clear();
+        -:  110:}
+------------------
+        -:  111:
+        -:  112:
+        -:  113://reuse data to next tie test
+        -:  114://4 candidates, tie between A and C, B and D are losers
+       16:  115:TEST(VotingFixture, find_max_cand_4) {
+        -:  116:
+        4:  117:    cand1.candidate_ballots.push_back(&ballot1);
+        4:  118:    cand1.candidate_ballots.push_back(&ballot1);
+        4:  119:    cand2.candidate_ballots.push_back(&ballot2);
+        4:  120:    cand3.candidate_ballots.push_back(&ballot3);
+        4:  121:    cand3.candidate_ballots.push_back(&ballot3);
+        4:  122:    cand4.candidate_ballots.push_back(&ballot4);
+        -:  123:
+        4:  124:    all_candidates.push_back(cand1);
+        4:  125:    all_candidates.push_back(cand2);
+        4:  126:    all_candidates.push_back(cand3);
+        4:  127:    all_candidates.push_back(cand4);
+        -:  128:
+        -:  129:    //testing out only one candidate in list
+       4*:  130:    ASSERT_EQ(find_max_cand(&all_candidates, 6, &winners), false);
+        -:  131:
+        4:  132:    cand1.candidate_ballots.clear();
+        4:  133:    cand2.candidate_ballots.clear();
+        4:  134:    cand3.candidate_ballots.clear();
+        4:  135:    cand4.candidate_ballots.clear();
+        4:  136:    all_candidates.clear();
+        -:  137:}
+------------------
+_ZN34VotingFixture_find_max_cand_4_TestC2Ev:
+        4:  115:TEST(VotingFixture, find_max_cand_4) {
+------------------
+_ZN34VotingFixture_find_max_cand_4_TestD0Ev:
+        4:  115:TEST(VotingFixture, find_max_cand_4) {
+------------------
+_ZN34VotingFixture_find_max_cand_4_TestD2Ev:
+        4:  115:TEST(VotingFixture, find_max_cand_4) {
+------------------
+_ZN34VotingFixture_find_max_cand_4_Test8TestBodyEv:
+        4:  115:TEST(VotingFixture, find_max_cand_4) {
+        -:  116:
+        4:  117:    cand1.candidate_ballots.push_back(&ballot1);
+        4:  118:    cand1.candidate_ballots.push_back(&ballot1);
+        4:  119:    cand2.candidate_ballots.push_back(&ballot2);
+        4:  120:    cand3.candidate_ballots.push_back(&ballot3);
+        4:  121:    cand3.candidate_ballots.push_back(&ballot3);
+        4:  122:    cand4.candidate_ballots.push_back(&ballot4);
+        -:  123:
+        4:  124:    all_candidates.push_back(cand1);
+        4:  125:    all_candidates.push_back(cand2);
+        4:  126:    all_candidates.push_back(cand3);
+        4:  127:    all_candidates.push_back(cand4);
+        -:  128:
+        -:  129:    //testing out only one candidate in list
+       4*:  130:    ASSERT_EQ(find_max_cand(&all_candidates, 6, &winners), false);
+        -:  131:
+        4:  132:    cand1.candidate_ballots.clear();
+        4:  133:    cand2.candidate_ballots.clear();
+        4:  134:    cand3.candidate_ballots.clear();
+        4:  135:    cand4.candidate_ballots.clear();
+        4:  136:    all_candidates.clear();
+        -:  137:}
+------------------
+        -:  138:
+        -:  139://find_tie()
+        -:  140:
+        -:  141:// one candidate is both a tie and a win because it ties with itself
+        -:  142:// this case would never actually be reached, because a winner would be declared first
+       16:  143:TEST(VotingFixture, find_tie_0) {
+        4:  144:    cand1.candidate_ballots.push_back(&ballot1);
+        4:  145:    cand1.candidate_ballots.push_back(&ballot1);
+        4:  146:    all_candidates.push_back(cand1);
+        4:  147:    set_num_valid_candidates(all_candidates.size());
+        -:  148:
+       4*:  149:    ASSERT_EQ(find_tie(&all_candidates, 2, &winners), true);
+        -:  150:
+        4:  151:    cand1.candidate_ballots.clear();
+        4:  152:    all_candidates.clear();
+        4:  153:    set_num_valid_candidates(0);
+        -:  154:}
+------------------
+_ZN29VotingFixture_find_tie_0_TestC2Ev:
+        4:  143:TEST(VotingFixture, find_tie_0) {
+------------------
+_ZN29VotingFixture_find_tie_0_TestD0Ev:
+        4:  143:TEST(VotingFixture, find_tie_0) {
+------------------
+_ZN29VotingFixture_find_tie_0_TestD2Ev:
+        4:  143:TEST(VotingFixture, find_tie_0) {
+------------------
+_ZN29VotingFixture_find_tie_0_Test8TestBodyEv:
+        4:  143:TEST(VotingFixture, find_tie_0) {
+        4:  144:    cand1.candidate_ballots.push_back(&ballot1);
+        4:  145:    cand1.candidate_ballots.push_back(&ballot1);
+        4:  146:    all_candidates.push_back(cand1);
+        4:  147:    set_num_valid_candidates(all_candidates.size());
+        -:  148:
+       4*:  149:    ASSERT_EQ(find_tie(&all_candidates, 2, &winners), true);
+        -:  150:
+        4:  151:    cand1.candidate_ballots.clear();
+        4:  152:    all_candidates.clear();
+        4:  153:    set_num_valid_candidates(0);
+        -:  154:}
+------------------
+        -:  155:
+        -:  156:// is a tie between two cands
+       16:  157:TEST(VotingFixture, find_tie_1) {
+        -:  158:
+        -:  159:
+        4:  160:    cand1.candidate_ballots.push_back(&ballot1);
+        4:  161:    cand2.candidate_ballots.push_back(&ballot2);
+        4:  162:    all_candidates.push_back(cand1);
+        4:  163:    all_candidates.push_back(cand2);
+        4:  164:    set_num_valid_candidates(all_candidates.size());
+       4*:  165:    ASSERT_EQ(find_tie(&all_candidates, 2, &winners), true);
+        -:  166:
+        4:  167:    cand1.candidate_ballots.clear();
+        4:  168:    cand2.candidate_ballots.clear();
+        4:  169:    all_candidates.clear();
+        4:  170:    set_num_valid_candidates(0);
+        -:  171:}
+------------------
+_ZN29VotingFixture_find_tie_1_TestC2Ev:
+        4:  157:TEST(VotingFixture, find_tie_1) {
+------------------
+_ZN29VotingFixture_find_tie_1_TestD0Ev:
+        4:  157:TEST(VotingFixture, find_tie_1) {
+------------------
+_ZN29VotingFixture_find_tie_1_TestD2Ev:
+        4:  157:TEST(VotingFixture, find_tie_1) {
+------------------
+_ZN29VotingFixture_find_tie_1_Test8TestBodyEv:
+        4:  157:TEST(VotingFixture, find_tie_1) {
+        -:  158:
+        -:  159:
+        4:  160:    cand1.candidate_ballots.push_back(&ballot1);
+        4:  161:    cand2.candidate_ballots.push_back(&ballot2);
+        4:  162:    all_candidates.push_back(cand1);
+        4:  163:    all_candidates.push_back(cand2);
+        4:  164:    set_num_valid_candidates(all_candidates.size());
+       4*:  165:    ASSERT_EQ(find_tie(&all_candidates, 2, &winners), true);
+        -:  166:
+        4:  167:    cand1.candidate_ballots.clear();
+        4:  168:    cand2.candidate_ballots.clear();
+        4:  169:    all_candidates.clear();
+        4:  170:    set_num_valid_candidates(0);
+        -:  171:}
+------------------
+        -:  172:
+        -:  173:// multiple candidates, no tie
+       16:  174:TEST(VotingFixture, find_tie_2) {
+        -:  175:
+        -:  176:
+        4:  177:    cand1.candidate_ballots.push_back(&ballot1);
+        4:  178:    cand2.candidate_ballots.push_back(&ballot2);
+        4:  179:    cand2.candidate_ballots.push_back(&ballot2);
+        4:  180:    all_candidates.push_back(cand1);
+        4:  181:    all_candidates.push_back(cand2);
+        4:  182:    set_num_valid_candidates(all_candidates.size());
+        -:  183:
+       4*:  184:    ASSERT_EQ(find_tie(&all_candidates, 2, &winners), false);
+        -:  185:
+        4:  186:    cand1.candidate_ballots.clear();
+        4:  187:    cand2.candidate_ballots.clear();
+        4:  188:    all_candidates.clear();
+        4:  189:    set_num_valid_candidates(0);
+        -:  190:}
+------------------
+_ZN29VotingFixture_find_tie_2_TestC2Ev:
+        4:  174:TEST(VotingFixture, find_tie_2) {
+------------------
+_ZN29VotingFixture_find_tie_2_TestD0Ev:
+        4:  174:TEST(VotingFixture, find_tie_2) {
+------------------
+_ZN29VotingFixture_find_tie_2_TestD2Ev:
+        4:  174:TEST(VotingFixture, find_tie_2) {
+------------------
+_ZN29VotingFixture_find_tie_2_Test8TestBodyEv:
+        4:  174:TEST(VotingFixture, find_tie_2) {
+        -:  175:
+        -:  176:
+        4:  177:    cand1.candidate_ballots.push_back(&ballot1);
+        4:  178:    cand2.candidate_ballots.push_back(&ballot2);
+        4:  179:    cand2.candidate_ballots.push_back(&ballot2);
+        4:  180:    all_candidates.push_back(cand1);
+        4:  181:    all_candidates.push_back(cand2);
+        4:  182:    set_num_valid_candidates(all_candidates.size());
+        -:  183:
+       4*:  184:    ASSERT_EQ(find_tie(&all_candidates, 2, &winners), false);
+        -:  185:
+        4:  186:    cand1.candidate_ballots.clear();
+        4:  187:    cand2.candidate_ballots.clear();
+        4:  188:    all_candidates.clear();
+        4:  189:    set_num_valid_candidates(0);
+        -:  190:}
+------------------
+        -:  191:
+        -:  192://testing all candidates tied
+       16:  193:TEST(VotingFixture, find_tie_3) {
+        -:  194:
+        4:  195:    cand1.candidate_ballots.push_back(&ballot1);
+        4:  196:    cand1.candidate_ballots.push_back(&ballot1);
+        4:  197:    cand2.candidate_ballots.push_back(&ballot2);
+        4:  198:    cand2.candidate_ballots.push_back(&ballot2);
+        4:  199:    cand3.candidate_ballots.push_back(&ballot3);
+        4:  200:    cand3.candidate_ballots.push_back(&ballot3);
+        4:  201:    cand4.candidate_ballots.push_back(&ballot4);
+        4:  202:    cand4.candidate_ballots.push_back(&ballot4);
+        -:  203:
+        4:  204:    all_candidates.push_back(cand1);
+        4:  205:    all_candidates.push_back(cand2);
+        4:  206:    all_candidates.push_back(cand3);
+        4:  207:    all_candidates.push_back(cand4);
+        -:  208:
+        4:  209:    set_num_valid_candidates(all_candidates.size());
+        -:  210:    //testing out only one candidate in list
+       4*:  211:    ASSERT_EQ(find_tie(&all_candidates, 8, &winners), true);
+        -:  212:
+        4:  213:    cand1.candidate_ballots.clear();
+        4:  214:    cand2.candidate_ballots.clear();
+        4:  215:    cand3.candidate_ballots.clear();
+        4:  216:    cand4.candidate_ballots.clear();
+        4:  217:    all_candidates.clear();
+        4:  218:    set_num_valid_candidates(0);
+        -:  219:}
+------------------
+_ZN29VotingFixture_find_tie_3_TestC2Ev:
+        4:  193:TEST(VotingFixture, find_tie_3) {
+------------------
+_ZN29VotingFixture_find_tie_3_TestD0Ev:
+        4:  193:TEST(VotingFixture, find_tie_3) {
+------------------
+_ZN29VotingFixture_find_tie_3_TestD2Ev:
+        4:  193:TEST(VotingFixture, find_tie_3) {
+------------------
+_ZN29VotingFixture_find_tie_3_Test8TestBodyEv:
+        4:  193:TEST(VotingFixture, find_tie_3) {
+        -:  194:
+        4:  195:    cand1.candidate_ballots.push_back(&ballot1);
+        4:  196:    cand1.candidate_ballots.push_back(&ballot1);
+        4:  197:    cand2.candidate_ballots.push_back(&ballot2);
+        4:  198:    cand2.candidate_ballots.push_back(&ballot2);
+        4:  199:    cand3.candidate_ballots.push_back(&ballot3);
+        4:  200:    cand3.candidate_ballots.push_back(&ballot3);
+        4:  201:    cand4.candidate_ballots.push_back(&ballot4);
+        4:  202:    cand4.candidate_ballots.push_back(&ballot4);
+        -:  203:
+        4:  204:    all_candidates.push_back(cand1);
+        4:  205:    all_candidates.push_back(cand2);
+        4:  206:    all_candidates.push_back(cand3);
+        4:  207:    all_candidates.push_back(cand4);
+        -:  208:
+        4:  209:    set_num_valid_candidates(all_candidates.size());
+        -:  210:    //testing out only one candidate in list
+       4*:  211:    ASSERT_EQ(find_tie(&all_candidates, 8, &winners), true);
+        -:  212:
+        4:  213:    cand1.candidate_ballots.clear();
+        4:  214:    cand2.candidate_ballots.clear();
+        4:  215:    cand3.candidate_ballots.clear();
+        4:  216:    cand4.candidate_ballots.clear();
+        4:  217:    all_candidates.clear();
+        4:  218:    set_num_valid_candidates(0);
+        -:  219:}
+------------------
+        -:  220:
+        -:  221://4 candidates, tie between A and C, B and D are losers
+       16:  222:TEST(VotingFixture, find_tie_4) {
+        -:  223:
+        4:  224:    cand1.candidate_ballots.push_back(&ballot1);
+        4:  225:    cand1.candidate_ballots.push_back(&ballot1);
+        4:  226:    cand2.candidate_ballots.push_back(&ballot2);
+        4:  227:    cand3.candidate_ballots.push_back(&ballot3);
+        4:  228:    cand3.candidate_ballots.push_back(&ballot3);
+        4:  229:    cand4.candidate_ballots.push_back(&ballot4);
+        -:  230:
+        4:  231:    all_candidates.push_back(cand1);
+        4:  232:    all_candidates.push_back(cand2);
+        4:  233:    all_candidates.push_back(cand3);
+        4:  234:    all_candidates.push_back(cand4);
+        -:  235:
+        4:  236:    set_num_valid_candidates(all_candidates.size());
+        -:  237:    //testing out only one candidate in list
+       4*:  238:    ASSERT_EQ(find_tie(&all_candidates, 6, &winners), false);
+        -:  239:
+        4:  240:    cand1.candidate_ballots.clear();
+        4:  241:    cand2.candidate_ballots.clear();
+        4:  242:    cand3.candidate_ballots.clear();
+        4:  243:    cand4.candidate_ballots.clear();
+        4:  244:    all_candidates.clear();
+        4:  245:    set_num_valid_candidates(0);
+        -:  246:}
+------------------
+_ZN29VotingFixture_find_tie_4_TestC2Ev:
+        4:  222:TEST(VotingFixture, find_tie_4) {
+------------------
+_ZN29VotingFixture_find_tie_4_TestD0Ev:
+        4:  222:TEST(VotingFixture, find_tie_4) {
+------------------
+_ZN29VotingFixture_find_tie_4_TestD2Ev:
+        4:  222:TEST(VotingFixture, find_tie_4) {
+------------------
+_ZN29VotingFixture_find_tie_4_Test8TestBodyEv:
+        4:  222:TEST(VotingFixture, find_tie_4) {
+        -:  223:
+        4:  224:    cand1.candidate_ballots.push_back(&ballot1);
+        4:  225:    cand1.candidate_ballots.push_back(&ballot1);
+        4:  226:    cand2.candidate_ballots.push_back(&ballot2);
+        4:  227:    cand3.candidate_ballots.push_back(&ballot3);
+        4:  228:    cand3.candidate_ballots.push_back(&ballot3);
+        4:  229:    cand4.candidate_ballots.push_back(&ballot4);
+        -:  230:
+        4:  231:    all_candidates.push_back(cand1);
+        4:  232:    all_candidates.push_back(cand2);
+        4:  233:    all_candidates.push_back(cand3);
+        4:  234:    all_candidates.push_back(cand4);
+        -:  235:
+        4:  236:    set_num_valid_candidates(all_candidates.size());
+        -:  237:    //testing out only one candidate in list
+       4*:  238:    ASSERT_EQ(find_tie(&all_candidates, 6, &winners), false);
+        -:  239:
+        4:  240:    cand1.candidate_ballots.clear();
+        4:  241:    cand2.candidate_ballots.clear();
+        4:  242:    cand3.candidate_ballots.clear();
+        4:  243:    cand4.candidate_ballots.clear();
+        4:  244:    all_candidates.clear();
+        4:  245:    set_num_valid_candidates(0);
+        -:  246:}
+------------------
+        -:  247:
+        -:  248://findLosers()
+        -:  249:
+        -:  250://would never get to this case bc found max or tied candidate before this is called
+        -:  251://1 candidate, its loser is itself
+       16:  252:TEST(VotingFixture, find_losers_0) {
+        -:  253:
+        4:  254:    cand1.candidate_ballots.push_back(&ballot1);
+        4:  255:    all_candidates.push_back(cand1);
+        -:  256:
+       4*:  257:    ASSERT_EQ(findLosers(&all_candidates).size(), 1);
+        -:  258:
+        4:  259:    cand1.candidate_ballots.clear();
+        4:  260:    all_candidates.clear();
+        -:  261:}
+------------------
+_ZN32VotingFixture_find_losers_0_TestC2Ev:
+        4:  252:TEST(VotingFixture, find_losers_0) {
+------------------
+_ZN32VotingFixture_find_losers_0_TestD0Ev:
+        4:  252:TEST(VotingFixture, find_losers_0) {
+------------------
+_ZN32VotingFixture_find_losers_0_TestD2Ev:
+        4:  252:TEST(VotingFixture, find_losers_0) {
+------------------
+_ZN32VotingFixture_find_losers_0_Test8TestBodyEv:
+        4:  252:TEST(VotingFixture, find_losers_0) {
+        -:  253:
+        4:  254:    cand1.candidate_ballots.push_back(&ballot1);
+        4:  255:    all_candidates.push_back(cand1);
+        -:  256:
+       4*:  257:    ASSERT_EQ(findLosers(&all_candidates).size(), 1);
+        -:  258:
+        4:  259:    cand1.candidate_ballots.clear();
+        4:  260:    all_candidates.clear();
+        -:  261:}
+------------------
+        -:  262:
+        -:  263://would never get to this case bc found max or tied candidate before this is called
+        -:  264://tied candidates, 2 losers
+       16:  265:TEST(VotingFixture, find_losers_1) {
+        -:  266:
+        -:  267:
+        4:  268:    cand1.candidate_ballots.push_back(&ballot1);
+        4:  269:    cand2.candidate_ballots.push_back(&ballot2);
+        4:  270:    all_candidates.push_back(cand1);
+        4:  271:    all_candidates.push_back(cand2);
+        -:  272:
+       4*:  273:    ASSERT_EQ(findLosers(&all_candidates).size(), 2);
+        -:  274:
+        4:  275:    cand1.candidate_ballots.clear();
+        4:  276:    cand2.candidate_ballots.clear();
+        4:  277:    all_candidates.clear();
+        -:  278:}
+------------------
+_ZN32VotingFixture_find_losers_1_TestC2Ev:
+        4:  265:TEST(VotingFixture, find_losers_1) {
+------------------
+_ZN32VotingFixture_find_losers_1_TestD0Ev:
+        4:  265:TEST(VotingFixture, find_losers_1) {
+------------------
+_ZN32VotingFixture_find_losers_1_TestD2Ev:
+        4:  265:TEST(VotingFixture, find_losers_1) {
+------------------
+_ZN32VotingFixture_find_losers_1_Test8TestBodyEv:
+        4:  265:TEST(VotingFixture, find_losers_1) {
+        -:  266:
+        -:  267:
+        4:  268:    cand1.candidate_ballots.push_back(&ballot1);
+        4:  269:    cand2.candidate_ballots.push_back(&ballot2);
+        4:  270:    all_candidates.push_back(cand1);
+        4:  271:    all_candidates.push_back(cand2);
+        -:  272:
+       4*:  273:    ASSERT_EQ(findLosers(&all_candidates).size(), 2);
+        -:  274:
+        4:  275:    cand1.candidate_ballots.clear();
+        4:  276:    cand2.candidate_ballots.clear();
+        4:  277:    all_candidates.clear();
+        -:  278:}
+------------------
+        -:  279:
+        -:  280://2 candidates with one loser
+       16:  281:TEST(VotingFixture, find_losers_2) {
+        -:  282:
+        -:  283:
+        4:  284:    cand1.candidate_ballots.push_back(&ballot1);
+        4:  285:    cand2.candidate_ballots.push_back(&ballot2);
+        4:  286:    cand2.candidate_ballots.push_back(&ballot2);
+        4:  287:    all_candidates.push_back(cand1);
+        4:  288:    all_candidates.push_back(cand2);
+        -:  289:
+       4*:  290:    ASSERT_EQ(findLosers(&all_candidates).size(), 1);
+        -:  291:
+        4:  292:    cand1.candidate_ballots.clear();
+        4:  293:    cand2.candidate_ballots.clear();
+        4:  294:    all_candidates.clear();
+        -:  295:}
+------------------
+_ZN32VotingFixture_find_losers_2_TestC2Ev:
+        4:  281:TEST(VotingFixture, find_losers_2) {
+------------------
+_ZN32VotingFixture_find_losers_2_TestD0Ev:
+        4:  281:TEST(VotingFixture, find_losers_2) {
+------------------
+_ZN32VotingFixture_find_losers_2_TestD2Ev:
+        4:  281:TEST(VotingFixture, find_losers_2) {
+------------------
+_ZN32VotingFixture_find_losers_2_Test8TestBodyEv:
+        4:  281:TEST(VotingFixture, find_losers_2) {
+        -:  282:
+        -:  283:
+        4:  284:    cand1.candidate_ballots.push_back(&ballot1);
+        4:  285:    cand2.candidate_ballots.push_back(&ballot2);
+        4:  286:    cand2.candidate_ballots.push_back(&ballot2);
+        4:  287:    all_candidates.push_back(cand1);
+        4:  288:    all_candidates.push_back(cand2);
+        -:  289:
+       4*:  290:    ASSERT_EQ(findLosers(&all_candidates).size(), 1);
+        -:  291:
+        4:  292:    cand1.candidate_ballots.clear();
+        4:  293:    cand2.candidate_ballots.clear();
+        4:  294:    all_candidates.clear();
+        -:  295:}
+------------------
+        -:  296:
+        -:  297://4 candidates, 2 losers
+       16:  298:TEST(VotingFixture, find_losers_3) {
+        -:  299:
+        4:  300:    cand1.candidate_ballots.push_back(&ballot1);
+        4:  301:    cand1.candidate_ballots.push_back(&ballot1);
+        4:  302:    cand2.candidate_ballots.push_back(&ballot2);
+        4:  303:    cand3.candidate_ballots.push_back(&ballot3);
+        4:  304:    cand3.candidate_ballots.push_back(&ballot3);
+        4:  305:    cand4.candidate_ballots.push_back(&ballot4);
+        -:  306:
+        4:  307:    all_candidates.push_back(cand1);
+        4:  308:    all_candidates.push_back(cand2);
+        4:  309:    all_candidates.push_back(cand3);
+        4:  310:    all_candidates.push_back(cand4);
+        -:  311:
+        -:  312:    //testing out only one candidate in list
+       4*:  313:    ASSERT_EQ(findLosers(&all_candidates).size(), 2);
+        -:  314:
+        4:  315:    cand1.candidate_ballots.clear();
+        4:  316:    cand2.candidate_ballots.clear();
+        4:  317:    cand3.candidate_ballots.clear();
+        4:  318:    cand4.candidate_ballots.clear();
+        4:  319:    all_candidates.clear();
+        -:  320:}
+------------------
+_ZN32VotingFixture_find_losers_3_TestC2Ev:
+        4:  298:TEST(VotingFixture, find_losers_3) {
+------------------
+_ZN32VotingFixture_find_losers_3_TestD0Ev:
+        4:  298:TEST(VotingFixture, find_losers_3) {
+------------------
+_ZN32VotingFixture_find_losers_3_TestD2Ev:
+        4:  298:TEST(VotingFixture, find_losers_3) {
+------------------
+_ZN32VotingFixture_find_losers_3_Test8TestBodyEv:
+        4:  298:TEST(VotingFixture, find_losers_3) {
+        -:  299:
+        4:  300:    cand1.candidate_ballots.push_back(&ballot1);
+        4:  301:    cand1.candidate_ballots.push_back(&ballot1);
+        4:  302:    cand2.candidate_ballots.push_back(&ballot2);
+        4:  303:    cand3.candidate_ballots.push_back(&ballot3);
+        4:  304:    cand3.candidate_ballots.push_back(&ballot3);
+        4:  305:    cand4.candidate_ballots.push_back(&ballot4);
+        -:  306:
+        4:  307:    all_candidates.push_back(cand1);
+        4:  308:    all_candidates.push_back(cand2);
+        4:  309:    all_candidates.push_back(cand3);
+        4:  310:    all_candidates.push_back(cand4);
+        -:  311:
+        -:  312:    //testing out only one candidate in list
+       4*:  313:    ASSERT_EQ(findLosers(&all_candidates).size(), 2);
+        -:  314:
+        4:  315:    cand1.candidate_ballots.clear();
+        4:  316:    cand2.candidate_ballots.clear();
+        4:  317:    cand3.candidate_ballots.clear();
+        4:  318:    cand4.candidate_ballots.clear();
+        4:  319:    all_candidates.clear();
+        -:  320:}
+------------------
+        -:  321:
+        -:  322://sort_loser()
+        -:  323:
+        -:  324://2 candidates with one loser
+       16:  325:TEST(VotingFixture, sort_losers_0) {
+        -:  326:
+        4:  327:    cand1.candidate_ballots.push_back(&ballot1);
+        4:  328:    cand2.candidate_ballots.push_back(&ballot2);
+        4:  329:    cand2.candidate_ballots.push_back(&ballot2);
+        4:  330:    all_candidates.push_back(cand1);
+        4:  331:    all_candidates.push_back(cand2);
+        -:  332:
+        4:  333:    set_num_valid_candidates(all_candidates.size());
+       4*:  334:    ASSERT_EQ(sort_loser(&all_candidates), 1);
+        -:  335:
+        4:  336:    cand1.candidate_ballots.clear();
+        4:  337:    cand2.candidate_ballots.clear();
+        4:  338:    all_candidates.clear();
+        4:  339:    set_num_valid_candidates(0);
+        -:  340:}
+------------------
+_ZN32VotingFixture_sort_losers_0_TestC2Ev:
+        4:  325:TEST(VotingFixture, sort_losers_0) {
+------------------
+_ZN32VotingFixture_sort_losers_0_TestD0Ev:
+        4:  325:TEST(VotingFixture, sort_losers_0) {
+------------------
+_ZN32VotingFixture_sort_losers_0_TestD2Ev:
+        4:  325:TEST(VotingFixture, sort_losers_0) {
+------------------
+_ZN32VotingFixture_sort_losers_0_Test8TestBodyEv:
+        4:  325:TEST(VotingFixture, sort_losers_0) {
+        -:  326:
+        4:  327:    cand1.candidate_ballots.push_back(&ballot1);
+        4:  328:    cand2.candidate_ballots.push_back(&ballot2);
+        4:  329:    cand2.candidate_ballots.push_back(&ballot2);
+        4:  330:    all_candidates.push_back(cand1);
+        4:  331:    all_candidates.push_back(cand2);
+        -:  332:
+        4:  333:    set_num_valid_candidates(all_candidates.size());
+       4*:  334:    ASSERT_EQ(sort_loser(&all_candidates), 1);
+        -:  335:
+        4:  336:    cand1.candidate_ballots.clear();
+        4:  337:    cand2.candidate_ballots.clear();
+        4:  338:    all_candidates.clear();
+        4:  339:    set_num_valid_candidates(0);
+        -:  340:}
+------------------
+        -:  341:
+        -:  342://4 candidates, 2 losers
+       16:  343:TEST(VotingFixture, sort_losers_1) {
+        -:  344:
+        4:  345:    cand1.candidate_ballots.push_back(&ballot1);
+        4:  346:    cand1.candidate_ballots.push_back(&ballot1);
+        4:  347:    cand2.candidate_ballots.push_back(&ballot2);
+        4:  348:    cand3.candidate_ballots.push_back(&ballot3);
+        4:  349:    cand3.candidate_ballots.push_back(&ballot3);
+        4:  350:    cand4.candidate_ballots.push_back(&ballot4);
+        -:  351:
+        4:  352:    all_candidates.push_back(cand1);
+        4:  353:    all_candidates.push_back(cand2);
+        4:  354:    all_candidates.push_back(cand3);
+        4:  355:    all_candidates.push_back(cand4);
+        -:  356:
+        4:  357:    set_num_valid_candidates(all_candidates.size());
+       4*:  358:    ASSERT_EQ(sort_loser(&all_candidates), 2);
+        -:  359:
+        4:  360:    cand1.candidate_ballots.clear();
+        4:  361:    cand2.candidate_ballots.clear();
+        4:  362:    cand3.candidate_ballots.clear();
+        4:  363:    cand4.candidate_ballots.clear();
+        4:  364:    all_candidates.clear();
+        4:  365:    set_num_valid_candidates(0);
+        -:  366:}
+------------------
+_ZN32VotingFixture_sort_losers_1_TestC2Ev:
+        4:  343:TEST(VotingFixture, sort_losers_1) {
+------------------
+_ZN32VotingFixture_sort_losers_1_TestD0Ev:
+        4:  343:TEST(VotingFixture, sort_losers_1) {
+------------------
+_ZN32VotingFixture_sort_losers_1_TestD2Ev:
+        4:  343:TEST(VotingFixture, sort_losers_1) {
+------------------
+_ZN32VotingFixture_sort_losers_1_Test8TestBodyEv:
+        4:  343:TEST(VotingFixture, sort_losers_1) {
+        -:  344:
+        4:  345:    cand1.candidate_ballots.push_back(&ballot1);
+        4:  346:    cand1.candidate_ballots.push_back(&ballot1);
+        4:  347:    cand2.candidate_ballots.push_back(&ballot2);
+        4:  348:    cand3.candidate_ballots.push_back(&ballot3);
+        4:  349:    cand3.candidate_ballots.push_back(&ballot3);
+        4:  350:    cand4.candidate_ballots.push_back(&ballot4);
+        -:  351:
+        4:  352:    all_candidates.push_back(cand1);
+        4:  353:    all_candidates.push_back(cand2);
+        4:  354:    all_candidates.push_back(cand3);
+        4:  355:    all_candidates.push_back(cand4);
+        -:  356:
+        4:  357:    set_num_valid_candidates(all_candidates.size());
+       4*:  358:    ASSERT_EQ(sort_loser(&all_candidates), 2);
+        -:  359:
+        4:  360:    cand1.candidate_ballots.clear();
+        4:  361:    cand2.candidate_ballots.clear();
+        4:  362:    cand3.candidate_ballots.clear();
+        4:  363:    cand4.candidate_ballots.clear();
+        4:  364:    all_candidates.clear();
+        4:  365:    set_num_valid_candidates(0);
+        -:  366:}
+------------------
+        -:  367:
+        -:  368://come back to test later!!!
+        -:  369:Ballot temp2("2 1 3 4");
+        -:  370:Ballot temp3("3 2 4 1");
+        -:  371:Ballot temp4("4 3 1 2");
+        -:  372:
+        -:  373://TODO what is this test
+        -:  374://3 losers, 1 winner
+       16:  375:TEST(VotingFixture, sort_losers_2) {
+        -:  376:
+        4:  377:    cand1.candidate_ballots.push_back(&ballot1);
+        4:  378:    cand1.candidate_ballots.push_back(&ballot1);
+        4:  379:    cand2.candidate_ballots.push_back(&temp2);
+        4:  380:    cand3.candidate_ballots.push_back(&temp3);
+        4:  381:    cand4.candidate_ballots.push_back(&temp4);
+        -:  382:
+        4:  383:    all_candidates.push_back(cand1);
+        4:  384:    all_candidates.push_back(cand2);
+        4:  385:    all_candidates.push_back(cand3);
+        4:  386:    all_candidates.push_back(cand4);
+        -:  387:
+        4:  388:    set_num_valid_candidates(all_candidates.size());
+       4*:  389:    ASSERT_EQ(sort_loser(&all_candidates), 1u);
+        -:  390:
+        4:  391:    cand1.candidate_ballots.clear();
+        4:  392:    cand2.candidate_ballots.clear();
+        4:  393:    cand3.candidate_ballots.clear();
+        4:  394:    cand4.candidate_ballots.clear();
+        4:  395:    all_candidates.clear();
+        4:  396:    set_num_valid_candidates(0);
+        -:  397:}
+------------------
+_ZN32VotingFixture_sort_losers_2_TestC2Ev:
+        4:  375:TEST(VotingFixture, sort_losers_2) {
+------------------
+_ZN32VotingFixture_sort_losers_2_TestD0Ev:
+        4:  375:TEST(VotingFixture, sort_losers_2) {
+------------------
+_ZN32VotingFixture_sort_losers_2_TestD2Ev:
+        4:  375:TEST(VotingFixture, sort_losers_2) {
+------------------
+_ZN32VotingFixture_sort_losers_2_Test8TestBodyEv:
+        4:  375:TEST(VotingFixture, sort_losers_2) {
+        -:  376:
+        4:  377:    cand1.candidate_ballots.push_back(&ballot1);
+        4:  378:    cand1.candidate_ballots.push_back(&ballot1);
+        4:  379:    cand2.candidate_ballots.push_back(&temp2);
+        4:  380:    cand3.candidate_ballots.push_back(&temp3);
+        4:  381:    cand4.candidate_ballots.push_back(&temp4);
+        -:  382:
+        4:  383:    all_candidates.push_back(cand1);
+        4:  384:    all_candidates.push_back(cand2);
+        4:  385:    all_candidates.push_back(cand3);
+        4:  386:    all_candidates.push_back(cand4);
+        -:  387:
+        4:  388:    set_num_valid_candidates(all_candidates.size());
+       4*:  389:    ASSERT_EQ(sort_loser(&all_candidates), 1u);
+        -:  390:
+        4:  391:    cand1.candidate_ballots.clear();
+        4:  392:    cand2.candidate_ballots.clear();
+        4:  393:    cand3.candidate_ballots.clear();
+        4:  394:    cand4.candidate_ballots.clear();
+        4:  395:    all_candidates.clear();
+        4:  396:    set_num_valid_candidates(0);
+        -:  397:}
+------------------
+        -:  398:
+        -:  399://2 candidates with one loser
+       16:  400:TEST(VotingFixture, sort_losers_3) {
+        -:  401:
+        4:  402:    cand1.candidate_ballots.push_back(&ballot1);
+        4:  403:    cand1.candidate_ballots.push_back(&ballot1);
+        4:  404:    cand2.candidate_ballots.push_back(&ballot2);
+        4:  405:    cand2.candidate_ballots.push_back(&ballot2);
+        4:  406:    cand3.candidate_ballots.push_back(&ballot3);
+        4:  407:    cand4.candidate_ballots.push_back(&ballot4);
+        -:  408:
+        4:  409:    all_candidates.push_back(cand1);
+        4:  410:    all_candidates.push_back(cand2);
+        4:  411:    all_candidates.push_back(cand3);
+        4:  412:    all_candidates.push_back(cand4);
+        -:  413:
+        4:  414:    set_num_valid_candidates(all_candidates.size());
+       4*:  415:    ASSERT_EQ(sort_loser(&all_candidates), 2);
+        -:  416:
+        4:  417:    cand1.candidate_ballots.clear();
+        4:  418:    cand2.candidate_ballots.clear();
+        4:  419:    cand3.candidate_ballots.clear();
+        4:  420:    cand4.candidate_ballots.clear();
+        4:  421:    all_candidates.clear();
+        4:  422:    set_num_valid_candidates(0);
+        -:  423:}
+------------------
+_ZN32VotingFixture_sort_losers_3_TestC2Ev:
+        4:  400:TEST(VotingFixture, sort_losers_3) {
+------------------
+_ZN32VotingFixture_sort_losers_3_TestD0Ev:
+        4:  400:TEST(VotingFixture, sort_losers_3) {
+------------------
+_ZN32VotingFixture_sort_losers_3_TestD2Ev:
+        4:  400:TEST(VotingFixture, sort_losers_3) {
+------------------
+_ZN32VotingFixture_sort_losers_3_Test8TestBodyEv:
+        4:  400:TEST(VotingFixture, sort_losers_3) {
+        -:  401:
+        4:  402:    cand1.candidate_ballots.push_back(&ballot1);
+        4:  403:    cand1.candidate_ballots.push_back(&ballot1);
+        4:  404:    cand2.candidate_ballots.push_back(&ballot2);
+        4:  405:    cand2.candidate_ballots.push_back(&ballot2);
+        4:  406:    cand3.candidate_ballots.push_back(&ballot3);
+        4:  407:    cand4.candidate_ballots.push_back(&ballot4);
+        -:  408:
+        4:  409:    all_candidates.push_back(cand1);
+        4:  410:    all_candidates.push_back(cand2);
+        4:  411:    all_candidates.push_back(cand3);
+        4:  412:    all_candidates.push_back(cand4);
+        -:  413:
+        4:  414:    set_num_valid_candidates(all_candidates.size());
+       4*:  415:    ASSERT_EQ(sort_loser(&all_candidates), 2);
+        -:  416:
+        4:  417:    cand1.candidate_ballots.clear();
+        4:  418:    cand2.candidate_ballots.clear();
+        4:  419:    cand3.candidate_ballots.clear();
+        4:  420:    cand4.candidate_ballots.clear();
+        4:  421:    all_candidates.clear();
+        4:  422:    set_num_valid_candidates(0);
+        -:  423:}
+------------------
+        -:  424:
+        -:  425://find_winner()
+        -:  426:
+        -:  427://immediately findMax
+       16:  428:TEST(VotingFixture, find_winner_0) {
+        -:  429:
+        4:  430:    cand1.candidate_ballots.push_back(&ballot1);
+        4:  431:    cand2.candidate_ballots.push_back(&ballot2);
+        4:  432:    cand2.candidate_ballots.push_back(&ballot2);
+        4:  433:    all_candidates.push_back(cand1);
+        4:  434:    all_candidates.push_back(cand2);
+        -:  435:
+       4*:  436:    ASSERT_EQ(find_winner(&all_candidates, 3), 1);
+        -:  437:
+        4:  438:    cand1.candidate_ballots.clear();
+        4:  439:    cand2.candidate_ballots.clear();
+        4:  440:    all_candidates.clear();
+        -:  441:}
+------------------
+_ZN32VotingFixture_find_winner_0_TestC2Ev:
+        4:  428:TEST(VotingFixture, find_winner_0) {
+------------------
+_ZN32VotingFixture_find_winner_0_TestD0Ev:
+        4:  428:TEST(VotingFixture, find_winner_0) {
+------------------
+_ZN32VotingFixture_find_winner_0_TestD2Ev:
+        4:  428:TEST(VotingFixture, find_winner_0) {
+------------------
+_ZN32VotingFixture_find_winner_0_Test8TestBodyEv:
+        4:  428:TEST(VotingFixture, find_winner_0) {
+        -:  429:
+        4:  430:    cand1.candidate_ballots.push_back(&ballot1);
+        4:  431:    cand2.candidate_ballots.push_back(&ballot2);
+        4:  432:    cand2.candidate_ballots.push_back(&ballot2);
+        4:  433:    all_candidates.push_back(cand1);
+        4:  434:    all_candidates.push_back(cand2);
+        -:  435:
+       4*:  436:    ASSERT_EQ(find_winner(&all_candidates, 3), 1);
+        -:  437:
+        4:  438:    cand1.candidate_ballots.clear();
+        4:  439:    cand2.candidate_ballots.clear();
+        4:  440:    all_candidates.clear();
+        -:  441:}
+------------------
+        -:  442:
+        -:  443://immediately find_tie
+       16:  444:TEST(VotingFixture, find_winner_1) {
+        -:  445:
+        4:  446:    cand1.candidate_ballots.push_back(&ballot1);
+        4:  447:    cand1.candidate_ballots.push_back(&ballot1);
+        4:  448:    cand2.candidate_ballots.push_back(&ballot2);
+        4:  449:    cand2.candidate_ballots.push_back(&ballot2);
+        4:  450:    all_candidates.push_back(cand1);
+        4:  451:    all_candidates.push_back(cand2);
+        -:  452:
+       4*:  453:    ASSERT_EQ(find_winner(&all_candidates, 4), 2);
+        -:  454:
+        4:  455:    cand1.candidate_ballots.clear();
+        4:  456:    cand2.candidate_ballots.clear();
+        4:  457:    all_candidates.clear();
+        -:  458:}
+------------------
+_ZN32VotingFixture_find_winner_1_TestC2Ev:
+        4:  444:TEST(VotingFixture, find_winner_1) {
+------------------
+_ZN32VotingFixture_find_winner_1_TestD0Ev:
+        4:  444:TEST(VotingFixture, find_winner_1) {
+------------------
+_ZN32VotingFixture_find_winner_1_TestD2Ev:
+        4:  444:TEST(VotingFixture, find_winner_1) {
+------------------
+_ZN32VotingFixture_find_winner_1_Test8TestBodyEv:
+        4:  444:TEST(VotingFixture, find_winner_1) {
+        -:  445:
+        4:  446:    cand1.candidate_ballots.push_back(&ballot1);
+        4:  447:    cand1.candidate_ballots.push_back(&ballot1);
+        4:  448:    cand2.candidate_ballots.push_back(&ballot2);
+        4:  449:    cand2.candidate_ballots.push_back(&ballot2);
+        4:  450:    all_candidates.push_back(cand1);
+        4:  451:    all_candidates.push_back(cand2);
+        -:  452:
+       4*:  453:    ASSERT_EQ(find_winner(&all_candidates, 4), 2);
+        -:  454:
+        4:  455:    cand1.candidate_ballots.clear();
+        4:  456:    cand2.candidate_ballots.clear();
+        4:  457:    all_candidates.clear();
+        -:  458:}
+------------------
+        -:  459:
+        -:  460:Ballot temp2_2("2 1 3 4");
+        -:  461:Ballot temp3_2("3 2 4 1");
+        -:  462:Ballot temp4_2("4 3 1 2");
+        -:  463:
+        -:  464://sort_loser then findMax
+       16:  465:TEST(VotingFixture, find_winner_2) {
+        -:  466:
+        4:  467:    cand1.candidate_ballots.push_back(&ballot1);
+        4:  468:    cand1.candidate_ballots.push_back(&ballot1);
+        4:  469:    cand2.candidate_ballots.push_back(&temp2_2);
+        4:  470:    cand3.candidate_ballots.push_back(&temp3_2);
+        4:  471:    cand4.candidate_ballots.push_back(&temp4_2);
+        -:  472:
+        4:  473:    all_candidates.push_back(cand1);
+        4:  474:    all_candidates.push_back(cand2);
+        4:  475:    all_candidates.push_back(cand3);
+        4:  476:    all_candidates.push_back(cand4);
+        -:  477:
+       4*:  478:    ASSERT_EQ(find_winner(&all_candidates, 5), 1);
+        -:  479:
+        4:  480:    cand1.candidate_ballots.clear();
+        4:  481:    cand2.candidate_ballots.clear();
+        4:  482:    cand3.candidate_ballots.clear();
+        4:  483:    cand4.candidate_ballots.clear();
+        4:  484:    all_candidates.clear();
+        -:  485:}
+------------------
+_ZN32VotingFixture_find_winner_2_TestC2Ev:
+        4:  465:TEST(VotingFixture, find_winner_2) {
+------------------
+_ZN32VotingFixture_find_winner_2_TestD0Ev:
+        4:  465:TEST(VotingFixture, find_winner_2) {
+------------------
+_ZN32VotingFixture_find_winner_2_TestD2Ev:
+        4:  465:TEST(VotingFixture, find_winner_2) {
+------------------
+_ZN32VotingFixture_find_winner_2_Test8TestBodyEv:
+        4:  465:TEST(VotingFixture, find_winner_2) {
+        -:  466:
+        4:  467:    cand1.candidate_ballots.push_back(&ballot1);
+        4:  468:    cand1.candidate_ballots.push_back(&ballot1);
+        4:  469:    cand2.candidate_ballots.push_back(&temp2_2);
+        4:  470:    cand3.candidate_ballots.push_back(&temp3_2);
+        4:  471:    cand4.candidate_ballots.push_back(&temp4_2);
+        -:  472:
+        4:  473:    all_candidates.push_back(cand1);
+        4:  474:    all_candidates.push_back(cand2);
+        4:  475:    all_candidates.push_back(cand3);
+        4:  476:    all_candidates.push_back(cand4);
+        -:  477:
+       4*:  478:    ASSERT_EQ(find_winner(&all_candidates, 5), 1);
+        -:  479:
+        4:  480:    cand1.candidate_ballots.clear();
+        4:  481:    cand2.candidate_ballots.clear();
+        4:  482:    cand3.candidate_ballots.clear();
+        4:  483:    cand4.candidate_ballots.clear();
+        4:  484:    all_candidates.clear();
+        -:  485:}
+------------------
+        -:  486:
+        -:  487:Ballot temp2_3("2 1 3 4");
+        -:  488:Ballot temp3_3("3 2 4 1");
+        -:  489:Ballot temp4_3("4 3 1 2");
+        -:  490://sort_loser, find_tie
+       16:  491:TEST(VotingFixture, find_winner_3) {
+        -:  492:
+        4:  493:    cand1.candidate_ballots.push_back(&ballot1);
+        4:  494:    cand1.candidate_ballots.push_back(&ballot1);
+        4:  495:    cand2.candidate_ballots.push_back(&temp2_3);
+        4:  496:    cand3.candidate_ballots.push_back(&temp3_3);
+        4:  497:    cand3.candidate_ballots.push_back(&temp3_3);
+        4:  498:    cand4.candidate_ballots.push_back(&temp4_3);
+        -:  499:
+        4:  500:    all_candidates.push_back(cand1);
+        4:  501:    all_candidates.push_back(cand2);
+        4:  502:    all_candidates.push_back(cand3);
+        4:  503:    all_candidates.push_back(cand4);
+        -:  504:
+        -:  505:    //testing out only one candidate in list
+       4*:  506:    ASSERT_EQ(find_winner(&all_candidates, 6), 2);
+        -:  507:
+        4:  508:    cand1.candidate_ballots.clear();
+        4:  509:    cand2.candidate_ballots.clear();
+        4:  510:    cand3.candidate_ballots.clear();
+        4:  511:    cand4.candidate_ballots.clear();
+        4:  512:    all_candidates.clear();
+        -:  513:}

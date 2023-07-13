@@ -1,0 +1,185 @@
+commit eeec64d67d38bc3a22f1d45c9062940c171ed410
+Author: DanicaPadlan <danica_padlan@yahoo.com>
+Date:   Sat Oct 1 21:21:19 2022 -0500
+
+    updated the readme
+
+commit cbd50babdf82de6f69e98fa1f7bdb8c327e02994
+Author: DanicaPadlan <danica_padlan@yahoo.com>
+Date:   Sat Oct 1 21:18:12 2022 -0500
+
+    fixed test
+
+commit 320ff97c4866ec7b2134a189e3ed747ee08221af
+Author: DanicaPadlan <danica_padlan@yahoo.com>
+Date:   Fri Sep 30 15:43:57 2022 -0500
+
+    ctd tests are fixed and test data is fine, can't do make run-all without getting diff errors from other tests
+
+commit 7e95d65de3883801f38517807b9e2d400662aaec
+Author: DanicaPadlan <danica_padlan@yahoo.com>
+Date:   Fri Sep 30 00:20:35 2022 -0500
+
+    updated README and git log
+
+commit 6de069d05d7dc1dca153d2404a0d280403410ee4
+Author: DanicaPadlan <danica_padlan@yahoo.com>
+Date:   Fri Sep 30 00:08:13 2022 -0500
+
+    fixed input tests to 300 lines
+
+commit c7e55a6f2f5673acbaf042a7d8e629ac751ab012
+Author: DanicaPadlan <danica_padlan@yahoo.com>
+Date:   Thu Sep 29 20:01:51 2022 -0500
+
+    updated README
+
+commit 1226f513ca54d383f6939478cbbce828403eff76
+Author: DanicaPadlan <danica_padlan@yahoo.com>
+Date:   Thu Sep 29 19:57:35 2022 -0500
+
+    finished running astyle, html, and git log
+
+commit 6cb4b986b2f18db73718de3c90ca2db7ff248dd6
+Author: DanicaPadlan <danica_padlan@yahoo.com>
+Date:   Thu Sep 29 19:48:28 2022 -0500
+
+    generated acceptance tests w/ input and output txt
+
+commit 259e840b80468ffd43cd9936d223237ba24d2e95
+Author: DanicaPadlan <danica_padlan@yahoo.com>
+Date:   Thu Sep 29 19:12:32 2022 -0500
+
+    finished unit testing, weird cases but works
+
+commit 56baa70cc561eb6307203b59d5066a59662180a0
+Author: DanicaPadlan <danica_padlan@yahoo.com>
+Date:   Thu Sep 29 15:20:55 2022 -0500
+
+    10/20 unit tests and added helper testing methods
+
+commit 232b84bfbd6564deb6a2ea9a43cb5904d8aa7473
+Author: DanicaPadlan <danica_padlan@yahoo.com>
+Date:   Thu Sep 29 13:59:57 2022 -0500
+
+    cleaned up a bit more code and added more descriptive comments
+
+commit 8efb9abc9eec78b376c675048cbacd294d0995ff
+Author: Sumaya Al-Bedaiwi <sumaya@cs.utexas.edu>
+Date:   Wed Sep 28 16:25:30 2022 -0500
+
+    added and testing .gitignore file
+
+commit dced9c677cd4bc535c0874c72a8a8d859f383baf
+Author: Sumaya Al-Bedaiwi <sumaya@cs.utexas.edu>
+Date:   Wed Sep 28 16:00:26 2022 -0500
+
+    checkTestData schema
+
+commit cf714eee29207fcc46f873089957e6f8516e2456
+Author: Sumaya Al-Bedaiwi <sumaya@cs.utexas.edu>
+Date:   Wed Sep 28 15:42:42 2022 -0500
+
+    cleaned up code
+
+commit 7c0495fa87bf2e24d1675328319b39da75116319
+Author: Sumaya Al-Bedaiwi <sumaya@cs.utexas.edu>
+Date:   Wed Sep 28 15:31:59 2022 -0500
+
+    fixed default minVotes to INT_MAX; passing all tests
+
+commit 90690c5a741ee815da96fe25c26df2245e071cba
+Author: DanicaPadlan <danica_padlan@yahoo.com>
+Date:   Tue Sep 27 15:56:22 2022 -0500
+
+    changed ints to unint
+
+commit 18feb685cfdf8f6c042df61f83e3336b2a4121d9
+Author: DanicaPadlan <danica_padlan@yahoo.com>
+Date:   Tue Sep 27 15:49:06 2022 -0500
+
+    1 on hackerrank, runtime error on rest of testcases
+
+commit b38d9b4858a251764ff032dead98b78992bda72d
+Author: DanicaPadlan <danica_padlan@yahoo.com>
+Date:   Tue Sep 27 15:09:40 2022 -0500
+
+    working solution
+
+commit 3d69d5d11e78fbc2863fd03806128632b2a03132
+Author: DanicaPadlan <danica_padlan@yahoo.com>
+Date:   Mon Sep 26 11:51:12 2022 -0500
+
+    saved voting.hpp to have is_loser bool
+
+commit e319411cd60d6a05997e2ea4361bfd6932334936
+Author: DanicaPadlan <danica_padlan@yahoo.com>
+Date:   Mon Sep 26 11:46:15 2022 -0500
+
+    started working on sortLoser(), figuring out how to store losers after processing its ballots
+
+commit 429d029b4704a58e6b6d4cfb76602032f48dda41
+Author: DanicaPadlan <danica_padlan@yahoo.com>
+Date:   Mon Sep 26 16:11:25 2022 +0000
+
+    Update .gitlab-ci.yml file
+
+commit 58fde4c18d3440ae5c5cbbd7068d1321ecc2119c
+Author: DanicaPadlan <danica_padlan@yahoo.com>
+Date:   Mon Sep 26 11:09:54 2022 -0500
+
+    got rid of .yml
+
+commit 259a579ebb822e6dbc156d287e38d9f70d69e74f
+Author: DanicaPadlan <danica_padlan@yahoo.com>
+Date:   Mon Sep 26 11:04:45 2022 -0500
+
+    added .yml file
+
+commit e7bdb820756e76aec2647c3555510cf3abf96a30
+Author: DanicaPadlan <danica_padlan@yahoo.com>
+Date:   Sun Sep 25 14:49:09 2022 -0500
+
+    started Voting methods and finished findMaxCand()
+
+commit e763e9d94115d90bf858fe29f5aea0c36a8fe893
+Author: Sumaya Al-Bedaiwi <sumaya@cs.utexas.edu>
+Date:   Sun Sep 25 14:00:53 2022 -0500
+
+    plan for selecting winner done
+
+commit 14699d316d817d6c9e954caaaad523f513d0c736
+Author: Sumaya Al-Bedaiwi <sumaya@cs.utexas.edu>
+Date:   Sun Sep 25 13:36:36 2022 -0500
+
+    cleaned up code for adding ballots to correct candidates
+
+commit b705c95b93602f06029c1159d10815b5b7a3367f
+Author: Sumaya Al-Bedaiwi <sumaya@cs.utexas.edu>
+Date:   Sun Sep 25 13:31:03 2022 -0500
+
+    Stored the ballots to correct candidates' Ballot vector
+
+commit c034083fcfaa10e9276c604921fc2b69ceec0e1b
+Author: DanicaPadlan <danica_padlan@yahoo.com>
+Date:   Sat Sep 24 21:14:02 2022 -0500
+
+    created makefile and almost finished loading data into Candidate and Ballot
+
+commit 170ed3d9ae2b0eb1e5829554b1b584a486d580f4
+Author: DanicaPadlan <danica_padlan@yahoo.com>
+Date:   Thu Sep 22 15:57:44 2022 -0500
+
+    completed IO and updated readme closes #3
+
+commit 3d9457f2472175e69dc101ed6bacbddc9200a1c5
+Author: DanicaPadlan <danica_padlan@yahoo.com>
+Date:   Tue Sep 20 21:20:27 2022 -0500
+
+    created source code files
+
+commit 222ba9e6166a9e6ff3be0761701e67bae24e6ff3
+Author: DanicaPadlan <danica_padlan@yahoo.com>
+Date:   Wed Sep 21 02:03:24 2022 +0000
+
+    Initial commit

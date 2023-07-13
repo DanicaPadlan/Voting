@@ -1,0 +1,63 @@
+        -:    0:Source:Voting.hpp
+        -:    0:Graph:TestVoting-TestVoting.gcno
+        -:    0:Data:TestVoting-TestVoting.gcda
+        -:    0:Runs:4
+        -:    1:// -----------
+        -:    2:// Voting.hpp
+        -:    3:// -----------
+        -:    4:
+        -:    5:#ifndef Voting_hpp
+        -:    6:#define Voting_hpp
+        -:    7:
+        -:    8:#include <vector>
+        -:    9:#include <sstream>
+        -:   10:#include <string>
+        -:   11:#include <iterator>
+        -:   12:
+        -:   13:using namespace std;
+        -:   14:
+        -:   15:struct Ballot {
+        -:   16:    int ballot_index;
+        -:   17:    vector<int> ballot_votes;
+        -:   18:
+       52:   19:    Ballot(string ballot_vals) {
+       52:   20:        ballot_index = 0;
+        -:   21:
+       52:   22:        istringstream is (ballot_vals);
+       52:   23:        ballot_votes.assign( (istream_iterator<int>( is ) ), (istream_iterator<int>()) );
+        -:   24:
+       52:   25:    }
+        -:   26:};
+        -:   27:
+        -:   28:struct Candidate {
+        -:   29:    vector<Ballot*> candidate_ballots;
+        -:   30:    string candidate_name;
+        -:   31:    bool is_loser;
+        -:   32:
+    #####:   33:    Candidate(string name) {
+    #####:   34:        candidate_name = name;
+    #####:   35:        is_loser = false;
+    #####:   36:    }
+        -:   37:};
+        -:   38:
+        -:   39:// for testing purposes
+        -:   40:void set_num_valid_candidates(uint num_cand);
+        -:   41:
+        -:   42:uint find_winner(vector<Candidate>* all_candidates, uint total_ballots);
+        -:   43:
+        -:   44://Xfind candidate with more than 50% total votes
+        -:   45:bool find_max_cand(vector<Candidate>* all_candidates, uint total_ballots, vector<Candidate>* winners);
+        -:   46:
+        -:   47://Xcheck if a tie is possible with ALL candidates
+        -:   48:bool find_tie(vector<Candidate>* all_candidates, uint total_ballots, vector<Candidate>* winners);
+        -:   49:
+        -:   50://find the candidate with lowest num ballots, and sort to other candidates
+        -:   51:uint sort_loser(vector<Candidate>* all_candidates);
+        -:   52:
+        -:   53://XReturns vector of indicies for the candidates with the lowest number of votes
+        -:   54:vector<uint> findLosers(vector<Candidate>* all_candidates);
+        -:   55:
+        -:   56:// distribute loser candidate's ballots to next preference candidate
+        -:   57:void sort_ballots(Candidate& curCand, vector<Candidate>* all_candidates);
+        -:   58:
+        -:   59:#endif // Voting_hpp

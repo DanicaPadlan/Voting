@@ -1,0 +1,141 @@
+# t indicates the number of test cases
+INT(1, 100, t) NEWLINE NEWLINE
+
+REP(t, NEWLINE)
+    # n indicates the number of candidates
+    INT(1, 20, n) NEWLINE
+    REPI(i, n)
+        # assumes names will have at least 1 character
+        REGEX("[^\n]+", cand[i])
+        ASSERT(STRLEN(cand[i]) <= 80)
+        NEWLINE
+    END
+    # no repeated names? (not mentioned in hackerrank spec)
+    # ASSERT(UNIQUE(cand))
+    UNSET(cand)
+    
+    # b indicates the number of ballots
+    WHILEI(b, b<1 || MATCH("123456789"))
+        REPI(i,n) SET(count[i+1] = 0) END
+        SET(max = n)
+        REPI(i,n,SPACE) 
+            SET(v = -1)
+            IF (max==1 || ((count[1]==0 || (max>=10 && count[10]==0) 
+                                        || (max>=11 && count[11]==0) 
+                                        || (max>=12 && count[12]==0) 
+                                        || (max>=13 && count[13]==0) 
+                                        || (max>=14 && count[14]==0) 
+                                        || (max>=15 && count[15]==0) 
+                                        || (max>=16 && count[16]==0) 
+                                        || (max>=17 && count[17]==0) 
+                                        || (max>=18 && count[18]==0) 
+                                        || (max>=19 && count[19]==0)) && MATCH("1")))
+                STRING("1")
+                IF(max<10 || (count[1]==0 && MATCH(" ")))
+                    SET(v = 1)
+                    SET(count[v] = 1)
+                ELSE
+                    SET(v = -10)
+                    IF(max==10 || (count[10]==0 && MATCH("0")))
+                        INT(0,0,v)
+                        SET(count[v+10] = 1) 
+                    ELSE IF(max==11 || (count[11]==0 && MATCH("1")))
+                        INT(1,1,v)
+                        SET(count[v+10] = 1)
+                    ELSE IF(max==12 || (count[12]==0 && MATCH("2")))
+                        INT(2,2,v)
+                        SET(count[v+10] = 1) 
+                    ELSE IF(max==13 || (count[13]==0 && MATCH("3")))
+                        INT(3,3,v)
+                        SET(count[v+10] = 1) 
+                    ELSE IF(max==14 || (count[14]==0 && MATCH("4")))
+                        INT(4,4,v)
+                        SET(count[v+10] = 1) 
+                    ELSE IF(max==15 || (count[15]==0 && MATCH("5")))
+                        INT(5,5,v)
+                        SET(count[v+10] = 1) 
+                    ELSE IF(max==16 || (count[16]==0 && MATCH("6")))
+                        INT(6,6,v)
+                        SET(count[v+10] = 1) 
+                    ELSE IF(max==17 || (count[17]==0 && MATCH("7")))
+                        INT(7,7,v)
+                        SET(count[v+10] = 1) 
+                    ELSE IF(max==18 || (count[18]==0 && MATCH("8")))
+                        INT(8,8,v)
+                        SET(count[v+10] = 1) 
+                    ELSE IF(max==19 || count[19]==0)
+                        INT(9,9,v)
+                        SET(count[v+10] = 1) 
+                    END END END END END END END END END END
+                END
+            ELSE IF (max==2 || ((count[2]==0 || (max==20 && count[20]==0)) && MATCH("2")))
+                STRING("2")
+                IF(max<20 || (count[2]==0 && MATCH(" ")))
+                    SET(v = 2)
+                    SET(count[v] = 1)
+                ELSE
+                    IF(max==20 || count[20]==0)
+                        INT(0,0,v)
+                        SET(count[v+20] = 1) 
+                    END
+                END
+            ELSE IF(max==3 || (count[3]==0 && MATCH("3")))
+                INT(3,3,v)
+                SET(count[v] = 1) 
+            ELSE IF(max==4 || (count[4]==0 && MATCH("4")))
+                INT(4,4,v)
+                SET(count[v] = 1) 
+            ELSE IF(max==5 || (count[5]==0 && MATCH("5")))
+                INT(5,5,v)
+                SET(count[v] = 1) 
+            ELSE IF(max==6 || (count[6]==0 && MATCH("6")))
+                INT(6,6,v)
+                SET(count[v] = 1) 
+            ELSE IF(max==7 || (count[7]==0 && MATCH("7")))
+                INT(7,7,v)
+                SET(count[v] = 1)
+            ELSE IF(max==8 || (count[8]==0 && MATCH("8")))
+                INT(8,8,v)
+                SET(count[v] = 1) 
+            ELSE IF(max==9 || count[9]==0)
+                INT(9,9,v)
+                SET(count[v] = 1) 
+            END END END END END END END END END
+            IF(v<0)
+                IF(v==-10)
+                    IF(count[1]==0)
+                        SET(v = 1)
+                        SET(count[v] = 1)
+                    ELSE IF(max!=20)
+                        INT(max-10,max-10,v)
+                        SET(count[v+10] = 1)
+                    ELSE
+                        SET(done=0)
+                        WHILEI(r, done==0)
+                            IF(r+1==max || count[max-(r+1)]==0)
+                                SET(val=max-(r+1))
+                                SET(done=1)
+                            END
+                        END
+                    INT(val-10,val-10,v)
+                    SET(count[v+10] = 1)
+                    END END
+                ELSE
+                    INT(max,max,v)
+                    SET(count[v] = 1)
+                END
+            END
+            SET(done=0)
+            WHILEI(r, done==0)
+                IF(r==max || count[max-r]==0)
+                    SET(max=max-r)
+                    SET(done=1)
+                END
+            END
+        END
+        REPI(i,n) ASSERT(count[i+1]==1) END
+        NEWLINE
+    END
+    ASSERT(b > 0)
+    ASSERT(b <= 1000)
+END

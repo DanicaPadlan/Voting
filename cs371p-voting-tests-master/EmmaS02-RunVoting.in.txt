@@ -1,0 +1,281 @@
+20
+
+4
+OJBvGSDbnECMCEvSnQAPCGasPTWfeVAolAHCNAgupNbOZRVWHvJbgyvXWSrxUcFEepPFfHfRBfPQIBnC
+KFsBPrClnNJpjhxuylHVIEccpsoqIXbZEQJWlSqYuXOfTbghLMnqemKATURJHtSyHmPAPJSOAimfhWPT
+oaTMHkNELDIgzNjaGKPpHMyFzRHQmZVevsJNkRSIYwLGgiYBTAbwLnBWKgGghOXpZaPLoYJhqTiPWXvO
+lYMXSRaXEjMeaMepHEYzzlGlKibwjeIVZcXKOIjqIiNgJcWzCWBQMozlReYPkpkScJUpqGOiIKKpiMip
+4 1 3 2
+4 2 1 3
+4 3 2 1
+1 2 3 4
+3 1 4 2
+3 1 4 2
+1 3 4 2
+4 3 2 1
+
+4
+VARPJcUsCANPQBqcxSojvECqqEYHaYeERlmogNCiriGFxTZGFoHGLbwBbvgnPLVthlnBXQCJQmjzOOQi
+ClCwsgxwXMwbBuFQUvlYXOcPtIiqJOfZnNpCGcJvFuGWxPCPfHPbDyCPpStZCxKzbhPpCYgNvJyYAAjO
+WVONGHrfVrQRwGYYiCpJxrmRRSKzcMZIimqYXftrKUpeugVhTqlCYUUdnZmlitWfDcTaMPmzlijyXsTH
+RwQLxkfsAwEqdorVwfeMDuDYJNOmlYlXVddKbniHvELvEzKKqGUvyciiRLyLTlsktPazHvTOBvqkpaod
+4 3 1 2
+3 1 4 2
+1 4 3 2
+1 2 3 4
+1 2 3 4
+3 1 2 4
+4 3 1 2
+1 3 2 4
+
+4
+WXTxQUAMcgthiUDXxGnviNCnDLfZRWgnKdMCOGCJOeCQKjMqeKbAsFQqcxZNFxDwECHJVlAQtfNAPmuz
+JhhakqlFmplOduIlItpuGdiyvAbOtuVCblaLXYlgdUcTOASgPKbGoRlcJELWDBNSHwtmZmHfiDLTOrcn
+BfexocwGPyujaKnggwGgJqMPwSvfPPYdgEMpilkaSpHHKEWkAqEmVPmqOvuDMSmyTyDSaGtJVNbsVhhE
+djSoZtXXVxvacMVClwNWaqHtNHPBArTGyCjolCDISBeBFggMBRabACAzXCrdHSWlyvzsfeHgWTAzWqJQ
+2 1 4 3
+4 3 2 1
+4 1 2 3
+4 1 3 2
+4 3 1 2
+2 1 4 3
+1 2 4 3
+1 2 4 3
+
+4
+DMUtLEJTmgWSuEVBHthwtPXDeJDqdxGjzeTlVQkEHEXRoDZURswkMVuxQmIWLwvhztcZArkhFpTATFte
+PjwHtdMkGGIMYdXZMVMpSbHJabZEQAQmScxDDnhasNeToMlLmEdCwBnceGOjkOckDHYwDyuuhupgCIFV
+EtunLirBNRfjbuoZaoWpMyYMYvbTwsAhVZVFoaPwDRuZauaGFaPCZQZqbFzISPBabhrXlTISxNfqcIKR
+QbIhUJhLzIlkVfKdpVUVtRpJWDgidEgMGzFNPOBURfPZQiXqUaOGKtzeZdYejECxYZNglOwxZBlfDXOn
+2 1 4 3
+4 2 1 3
+2 1 3 4
+2 3 4 1
+2 3 4 1
+2 4 1 3
+3 2 1 4
+1 2 3 4
+
+4
+tlwGkuDURsyQOZWZAvBAPBFfQaqekKgbeILEQFAjdsmUPNglxmGiuyQKxUyAjHXrrohhPpnTqGOLEJBd
+zbyypwKFWXenssdBRZJuCmBoAnmoYlAJfKNXIlkAFxFGICIgnevBKADghmHdTUjxnTsPMkyItaWkbedV
+amLmJjXNZPfnDuwQdoxerAgaLBrsgIOzoyYcUdSdoNBPXgccMYIUJaUdgAwAohwdbETzWTtNXBNmyDkU
+EFrpWzVojNLrgQeGSJYGrioPAAAnNWQPgKjGuKstiRLUFsorbyjPdcpPeGVYJYyguvvlmrqycuZtHRjY
+2 3 1 4
+2 1 3 4
+3 1 4 2
+3 2 1 4
+4 1 2 3
+1 2 4 3
+2 1 4 3
+1 4 3 2
+
+4
+WKKFSypxkazsknmZmiEnxrZwPLCLqLoLGKoCHMOCsQqumbHIYvYppVCXikTEzZOGCHSEgZhPTCHZjcEa
+auDWJLdYgZMkXeMfOwIUYsZuLvENKngNMAtjwdJAGqCHRTJmlfCKgPpgeSECWHYYqFsACAOJiiSRKTJq
+LvjOdjbkSaleECSfQJZNTkIOkOFDwncMukALEozcpFoGKJRZIOsAjYrutYRzUsNoROunxXgwPrZjWgkO
+LfgPgPmVpmiuZbdIVOwYhpQZAkrzQAMDmUlIJpcehLmSgaeycegaVxfSLYltCpLBoIJVACqokzcYHXDC
+2 4 3 1
+2 3 4 1
+3 1 4 2
+2 1 3 4
+2 3 4 1
+2 1 4 3
+4 2 3 1
+2 4 1 3
+
+4
+SuSvFTacfrKNhBozHnhJmhPsosjHqYdmbwKwOGFhEyqAOMcMKfaQyIsDqiudeJIUVsQmbrhZYSeoEMhg
+laLNldCfAOWbkTlADQnkNVNvvKiKCQfqAAUbUnrAOlsFbkWpBcKVpGIRjnAzWPWMNpsBsgWHhIShFqDv
+QgwGYCJgppfJKaVNggJmXzdhJeWcbdQuMEhZurKUCTzVAjyCtlqnxOgjjMuvUpidbxsGTJfrdXumkBrL
+SseCadtARpKgmutwUpdWrsKOHGrdOkEHqaZIYikOKrJbiCarvGCofnyzHEqatjopsTUqGLgAdMbbDAvT
+2 4 1 3
+4 3 1 2
+3 4 2 1
+3 1 4 2
+1 4 2 3
+1 4 3 2
+3 1 4 2
+4 1 3 2
+
+4
+DZkUoyIzsRBKntsGEajInnnfvIJVnlgdtQFaabppeLMFNXiBbPJkNyaLczeBKAGylLGTdpJLNKpwDilH
+bQdnOzXbOcVoZyROwQvSaElDHJHshditbbXuchGXaMnTpkMbPSotgSVQFWmixGPwNuhuustIbCqLGuKb
+RfJbjmreuSqEOypAIjckyQHhDrDmRQNwCMSODexOGKmenXsRczAuNHPZZVJpEwGyETafUWgsPGpcltqu
+khFJffilQfdztabqGOzlpEvqiaFecltkpvUTVprilTHOGzQwtpBckrrLxMiFaLlmFumbCLIRvQWydKnT
+2 1 4 3
+1 2 3 4
+4 1 3 2
+3 1 2 4
+3 4 1 2
+1 4 2 3
+4 1 2 3
+1 3 4 2
+
+4
+yOoUIWqbQMUjeeKOBFBjuNxuPVFPMqHZrJNUlLhJCkLjcgKynTUpkAhWICyxalYqtvNgjRuNHehitEsK
+vliEzNBsCojBSnblergXdMQHbGfDFtzPrvKOANTXCBoikOJRJszdbrKYbhWkKwRarWYGEjxyhmOwWbUG
+JoGTsnBOvYGLPIzmutZCXQkmMgMobAIlAWXsCNykziLHUqiIuUaqPBiUGaRRPadQRFZlmDasmJaEhoFv
+yZlKTPUsGnBIxVWGgQbApnOFiMydNsRpPSVrdGhTxBikEWcvOwpkfDNhwaKXYXFropCcHwwmibigYxnD
+2 4 3 1
+1 3 2 4
+2 1 3 4
+3 1 2 4
+1 2 4 3
+3 2 1 4
+1 3 2 4
+4 2 1 3
+
+4
+SeqrDdPQJLuTMoarSylpDOLAHzVBJwCawSzvtICSyzqJPIkELeAgwiPcmCuwBrhDjaVKdQMDoafBuzGQ
+PUWmUVqqhAYFWNRTIVMQVSHzkaOGKNNzioBTLdcDXqpEvmYAHJQMEksZLVkrbRNoOlHvFLQxUXfhqXDV
+aWwsqsjAweoqXoHocFkDzqvJlxSKqCoGaVQSVruQOAJZDrIHzeBzTzVkjyNcmLOhqiUiBQEKfLhUfUzM
+oxQJrxOQkHLyNdAXPkGhSXBVasTuaGHYaadZOiFeddNOIiEMeJDTrVoDEXWXTzVWBaDdjsjGGtuusGgi
+2 1 3 4
+4 1 3 2
+3 1 4 2
+3 2 4 1
+3 1 4 2
+3 1 2 4
+4 2 3 1
+4 2 3 1
+
+4
+UuQsENqvKCbWJPIQyHqWWkzDZPLkIOPPOovYzCIKhNMHoJXRwBvMNUstyifXacVPvhrhVOzmabSEvDbY
+baDrzcpODVhmahoZJzkANlNiASEEAKuLKzzulCYkkfKWIHgORsZhQrxsqdCLyWQXivIYARHWVCfmgpJd
+wXkCCFKirjGSvziCJzEegEhlMxCNioCtivWzMZRfXMUfffpiYTARYvXmiERVTVwEftGXqQHjEqLoPtgb
+XYPSqsDReSDOQMtjeycTxNmLzWrupkhmjZOnKhBtPygfguQJijlsZbxOZxPHKClrmPHMsInvJWihtPGH
+4 3 1 2
+1 2 3 4
+3 1 4 2
+2 1 3 4
+2 1 3 4
+1 3 2 4
+1 2 3 4
+1 4 3 2
+
+4
+jvVbxpXDULhJussEwyDddQMeXVaBqhtcxcpCtJcYvFYlYrseOFYoGmKYxMhioJXvgXEglwNCFuYMzzaV
+flXVAOvqJiYdAlAJEPUuKxGNaBVxeWyQUVYHRUUgPRJMuIfdENmzITPJjbqZqCLvAxTjcKQyVQKOPtra
+BoLnwRYhpYUiLpAgdfRzOfEpKwsTsLLuKzsLbViUqRIegNPBrKFnpxCcghsQfUAtGVAqsmbjfNiuwlXG
+mfuRcHPJOvWGAGzRSXcBeCKstIujzpYFZsDocDJuwvRCnBVaptkEhhTNuzSXcguicCQttJredAIbfOFT
+2 1 4 3
+3 1 2 4
+4 2 3 1
+1 3 2 4
+2 3 4 1
+3 2 4 1
+1 3 2 4
+1 4 3 2
+
+4
+FATGkEpkPJEAKLCJiIZNYrXpweEOkLJaMDfgIWmKlHmoNfBjhkLMSZliyiiVdJMhgACUIgLvtNkVVPJs
+xXgRkrPNSqgXDRgHizjKiRGgfGQjAjkkgCdsVKkKmVPXETnrZdulJmslvRnFpEsESyRupOpgwTWIKXhX
+DfpVemaChbUlkKlGziWMqxStjaxUPoNRPyfVWvOGNzabWiimSorxRCWVUvRIOdeHzWPZagUUxxpMTSll
+jfurKRmOzUpNSwGPTpKGPPWBJHZJpWMsEximfwWepRLoKnkMAiiCIlObIHmGUYqtXXVNlRbrKsXNYEKD
+3 2 1 4
+1 2 4 3
+1 2 3 4
+2 4 1 3
+1 3 2 4
+3 2 1 4
+4 3 1 2
+3 1 4 2
+
+4
+zrqKugbPEJFdrrEvtznjlcNvEiEVRKSTaGBilXrjqxFIdIxjxmpefPwzVzWsZDwVeAabdfolgyFUjSwM
+LrgsMzFzOEYVIMEUUSTxPtkrGjfjUnpiBGnlDJxAARWJUxlePlvshaLZzBMLJsTHbRlSAmxVCjpkVOtT
+XtUyzGkRnNudhtFzPbqlGhlVYlFmmPKZlqttAPnhZEQqwbfToqCVsJFubnHRPSaCOfLQeJnafJEHoyuG
+PfSIRVTrpvDRMkdJuXTLVZsgWlPEefgjslOyMKXYlnEzabwRTaEjKwGLPgOuxvBDfEoVAiwItHDJUkRr
+2 1 4 3
+4 1 2 3
+1 2 4 3
+3 1 4 2
+2 3 1 4
+3 4 2 1
+4 3 1 2
+1 3 2 4
+
+4
+JwDJMFthRRrCQyUBlCRoPSkMBGJlYCBYzYSsQUPhECUAolRHrVDSfjtlCDRMtJQDNCZFlnFXuyNmPFZi
+QHVvShGXwwZhdlBgLgZlaKFvZxEGAdDKmKangEwLVcJQolksggsWBGQJvJPlLzUZBShMhqFJItXXAWpM
+zveRETjrSGFcwUSfWhOgmCyGmspeMlWWHHqFuwCDrvuqawnLJrRhirCiyFKhjzQCdhAYzFcarCdFlvMH
+TXNqoqulLNpnJetQXKBpwZEHQWxYFvfiippssQywKZuarOzvmcqfSSXCnLZsWlnhgkkNSrNpVrAqAyOd
+2 4 1 3
+4 3 2 1
+4 2 1 3
+4 3 1 2
+2 4 1 3
+1 2 4 3
+3 4 1 2
+4 1 3 2
+
+4
+SMSjstotAONgkHQOdgoNXEcLpdMhmbzFCybMRwXzKaZrMbNbKaYZSnDFXMWmDHFpVOovtEmplrHJybfx
+xPAKXcVblMHiNmuoqOPfwLPdASKcpHrKieRsjtkxDjHjlrOIKfOjwmDiVcrBPJKxBBfiRXdbDsqQlYbq
+vFYKjzLBLrvngfGsSxIXXqxQzXsknrbVwKqIQtSpMuHJCCaEduTDScEaqcjTADTMQuEDnAlYorVTMBgx
+MgDBhLrhbEQirUGRgAvmcriNiGoLEvVuRHviKFmLyQUYpXCIPjKbkcZLfFWDhNPQiybZiveMtVpWAONv
+1 2 3 4
+3 1 4 2
+4 3 1 2
+1 4 3 2
+3 4 1 2
+2 4 1 3
+4 1 2 3
+1 2 4 3
+
+4
+SavMKnVmBjvFREjdXkwsqRhZNocTPYGFjYfdjMOSnCpUpqgSLoNmQDDJWADkTkPFGsuAizigrvtodqBv
+KLilSARmXxRjKJMSKvVfGsrTmRCvOqQyXUrRkKzqCUOeowkpAmhCibsyGWvGbXxYolBZqLKdzTaQbHBl
+JoMqotIKTOvEGCfaUCUvbcxohUtfIweTfHefYMLclEeaSdEiCRwpcVCqGvgAAbtSNoYPfUDSbJFJRudW
+IRCSlpPMpUIayNzGDBkwdroMZHLnpokpfLLpFRtHIBqPNAiloxLDzdIXmEOGRYUPRWpSdJhqBDWMgXxF
+1 4 3 2
+2 4 1 3
+1 2 4 3
+2 4 3 1
+2 3 1 4
+4 3 1 2
+2 4 1 3
+3 2 4 1
+
+4
+jwkBcOryQYymyxtBXgqBcKyJDGYWviqSOwXJGDtLEpmgcGcYgCpUmGTgVozIiUCPbfksEtkrOJtowiUn
+RORgYDmtmwAuatJuKQmroXxlEErLXFfvbGwLrjpUMbULsFNSooNiuXqBfYNlGZKADjrAMXSORISQsBSJ
+VJKtXQTfJBbLRiLZssAPKeSIVSuImuKhOgrLHhWLjZOgNIrWBGqUkEZnUKjNXgDOcdLWgNBVuANeHhwb
+RUOkDNITFSAnOGpovhjToLgKlfGLJEtvhLknKjRzZdLpBYHugbtMAupVMHKBMuAwqHVUkwsOijnwfyJz
+3 4 2 1
+3 4 1 2
+2 3 1 4
+3 2 1 4
+4 2 3 1
+3 2 1 4
+3 2 1 4
+1 2 3 4
+
+4
+ZBpSBfmhHqeRINnCxFOCGsGaVYKNrqMJiRgkEGMwnUFWxQQTHJKDAVwAFxyJMqDJGrunNKflEZPrDDxd
+DyKgSkiZhxVlZZTEiGyzldgUWWfwhzByiYmplOHSzRHpvyGMKrdqnDngDbAhBkIIoKEmVcqwLtSZIYlU
+jCrwqjkMXlslZtbbgLJTZWcwfUqZUjsyMyIHWCRmPcdRLrzIpiiFsctRQeyyMHrEAKjGfQtJucnthjgs
+HXvDSUAxdrzYKXbBhWbpRyDLnTnTojzUexRJXdOOOIQPeXBrkXyCMYAQvEbMfKBJyzYDUFwUIFDEJXdR
+1 3 4 2
+3 1 4 2
+1 2 3 4
+4 2 3 1
+1 2 4 3
+1 2 3 4
+4 1 2 3
+3 2 1 4
+
+4
+OAGyGifmWSNFjkCtrNOeycHFdFvKuyFUmDcaJgFAXPQkMpKdowtYoGMtLpZlpgkotTnGbYlfVWWjrzmm
+botIqiBOcZUUweatTcLKLTQoybtPlWoicsDqNwGvemOKMrUONWdonqbpMrNIzwmMAEnUYpaASuPfgefE
+PdABPMjMVqPZfesbdApmAZlbFFEfLZDpWsdgJVZMuISNpScHPpZwaMnnAMOFMiNPyOeBQdjpztvPLqTn
+LnZpjZGboexQVhoVdwpBmfzKUJOdurNlNeWnJLbNvoRuIRycowJLXDigOIDrieHgbGjKWzmXQiVyPFMj
+2 3 4 1
+1 3 4 2
+3 1 2 4
+4 2 1 3
+3 4 2 1
+1 4 2 3
+4 3 2 1
+1 4 3 2
